@@ -122,7 +122,7 @@ export default function AnimationPage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-black">
-      {/* Background Animation */}
+      {/* Background Animation - Desktop */}
       <div className="absolute inset-0 w-full h-full hidden lg:block">
         <div 
           data-us-project="OMzqyUv6M3kSnv0JeAtC" 
@@ -130,8 +130,8 @@ export default function AnimationPage() {
         />
       </div>
 
-      {/* Mobile stars background */}
-      <div className="absolute inset-0 w-full h-full lg:hidden stars-bg"></div>
+      {/* Mobile stars background - Enhanced */}
+      <div className="absolute inset-0 w-full h-full lg:hidden stars-bg" style={{ zIndex: 0 }}></div>
 
       {/* Top Header */}
       <div className="absolute top-0 left-0 right-0 z-20 border-b border-white/20">
@@ -266,17 +266,26 @@ export default function AnimationPage() {
         
         .stars-bg {
           background-image: 
-            radial-gradient(1px 1px at 20% 30%, white, transparent),
-            radial-gradient(1px 1px at 60% 70%, white, transparent),
-            radial-gradient(1px 1px at 50% 50%, white, transparent),
-            radial-gradient(1px 1px at 80% 10%, white, transparent),
-            radial-gradient(1px 1px at 90% 60%, white, transparent),
-            radial-gradient(1px 1px at 33% 80%, white, transparent),
-            radial-gradient(1px 1px at 15% 60%, white, transparent),
-            radial-gradient(1px 1px at 70% 40%, white, transparent);
-          background-size: 200% 200%, 180% 180%, 250% 250%, 220% 220%, 190% 190%, 240% 240%, 210% 210%, 230% 230%;
-          background-position: 0% 0%, 40% 40%, 60% 60%, 20% 20%, 80% 80%, 30% 30%, 70% 70%, 50% 50%;
-          opacity: 0.3;
+            radial-gradient(2px 2px at 10% 20%, white, transparent),
+            radial-gradient(2px 2px at 30% 50%, white, transparent),
+            radial-gradient(1px 1px at 50% 20%, white, transparent),
+            radial-gradient(2px 2px at 70% 80%, white, transparent),
+            radial-gradient(1px 1px at 80% 40%, white, transparent),
+            radial-gradient(2px 2px at 20% 60%, white, transparent),
+            radial-gradient(1px 1px at 40% 80%, white, transparent),
+            radial-gradient(2px 2px at 60% 30%, white, transparent),
+            radial-gradient(1px 1px at 90% 70%, white, transparent),
+            radial-gradient(2px 2px at 15% 40%, white, transparent),
+            radial-gradient(1px 1px at 55% 60%, white, transparent),
+            radial-gradient(2px 2px at 85% 20%, white, transparent);
+          background-size: 100% 100%;
+          opacity: 0.4;
+          animation: twinkle 8s ease-in-out infinite;
+        }
+        
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.4; }
+          50% { opacity: 0.6; }
         }
       `}</style>
     </main>

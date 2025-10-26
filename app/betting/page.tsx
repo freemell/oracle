@@ -160,9 +160,9 @@ export default function BettingPage() {
         </div>
       </header>
 
-      <div className="flex h-[calc(100vh-57px)]">
+      <div className="flex flex-col lg:flex-row h-[calc(100vh-57px)]">
         {/* Left Sidebar */}
-        <aside className="w-64 border-r border-white/20 bg-black/40 backdrop-blur-sm overflow-y-auto">
+        <aside className="w-full lg:w-64 border-r border-white/20 bg-black/40 backdrop-blur-sm overflow-y-auto order-2 lg:order-1">
           <div className="p-4">
             <div className="mb-6">
               <div className="text-xs text-white/60 font-mono mb-2">Powered by Azuro</div>
@@ -232,45 +232,45 @@ export default function BettingPage() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 overflow-y-auto">
-          <div className="container mx-auto px-6 py-6">
+        <main className="flex-1 overflow-y-auto order-1 lg:order-2">
+          <div className="container mx-auto px-4 lg:px-6 py-4 lg:py-6">
             {/* Featured Matches */}
-            <div className="mb-8">
-              <h2 className="text-xl font-mono mb-4 flex items-center gap-2">
-                <Star className="w-5 h-5" />
+            <div className="mb-6 lg:mb-8">
+              <h2 className="text-lg lg:text-xl font-mono mb-3 lg:mb-4 flex items-center gap-2">
+                <Star className="w-4 h-4 lg:w-5 lg:h-5" />
                 Featured Predictions
               </h2>
               {loading ? (
                 <div className="text-center py-12 text-white/60 font-mono">Loading prophecies...</div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
                   {matches.slice(0, 3).map((match) => (
-                    <div key={match.id} className="bg-white/5 border border-white/20 p-4 hover:border-white transition-all">
+                    <div key={match.id} className="bg-white/5 border border-white/20 p-3 lg:p-4 hover:border-white transition-all">
                       <div className="text-xs text-white/60 font-mono mb-2">{match.league}</div>
-                      <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center justify-between mb-2 lg:mb-3">
                         <div className="flex-1">
-                          <div className="font-mono text-sm">{match.team1}</div>
+                          <div className="font-mono text-xs lg:text-sm">{match.team1}</div>
                           <div className="font-mono text-xs text-white/60">vs</div>
-                          <div className="font-mono text-sm">{match.team2}</div>
+                          <div className="font-mono text-xs lg:text-sm">{match.team2}</div>
                         </div>
                       </div>
-                      <div className="text-xs text-white/60 font-mono mb-3">{match.time} {match.date}</div>
-                      <div className="flex gap-2">
+                      <div className="text-xs text-white/60 font-mono mb-2 lg:mb-3">{match.time} {match.date}</div>
+                      <div className="flex gap-1.5 lg:gap-2">
                         <button
                           onClick={() => addToBetSlip(match, '1', match.odds1)}
-                          className="flex-1 py-2 bg-white text-black hover:bg-white/90 text-xs font-mono transition-all"
+                          className="flex-1 py-1.5 lg:py-2 bg-white text-black hover:bg-white/90 text-xs font-mono transition-all"
                         >
                           1 - {match.odds1}
                         </button>
                         <button
                           onClick={() => addToBetSlip(match, 'X', match.oddsX)}
-                          className="flex-1 py-2 bg-white text-black hover:bg-white/90 text-xs font-mono transition-all"
+                          className="flex-1 py-1.5 lg:py-2 bg-white text-black hover:bg-white/90 text-xs font-mono transition-all"
                         >
                           X - {match.oddsX}
                         </button>
                         <button
                           onClick={() => addToBetSlip(match, '2', match.odds2)}
-                          className="flex-1 py-2 bg-white text-black hover:bg-white/90 text-xs font-mono transition-all"
+                          className="flex-1 py-1.5 lg:py-2 bg-white text-black hover:bg-white/90 text-xs font-mono transition-all"
                         >
                           2 - {match.odds2}
                         </button>
@@ -354,7 +354,7 @@ export default function BettingPage() {
         </main>
 
         {/* Right Sidebar - Betslip */}
-        <aside className="w-80 border-l border-white/20 bg-black/40 backdrop-blur-sm">
+        <aside className="w-full lg:w-80 border-l border-white/20 bg-black/40 backdrop-blur-sm order-3">
           <div className="p-4">
             <div className="flex gap-2 mb-4">
               <button className="flex-1 py-2 bg-white text-black text-xs font-mono">Betslip</button>

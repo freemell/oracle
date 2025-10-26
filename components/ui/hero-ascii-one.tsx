@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function AnimationPage() {
   const [barHeights, setBarHeights] = useState<number[]>([]);
@@ -87,13 +88,15 @@ export default function AnimationPage() {
               title.includes('unicorn') ||
               href.includes('unicorn.studio')
             ) {
-              el.style.display = 'none';
-              el.style.visibility = 'hidden';
-              el.style.opacity = '0';
-              el.style.pointerEvents = 'none';
-              el.style.position = 'absolute';
-              el.style.left = '-9999px';
-              el.style.top = '-9999px';
+              if (el instanceof HTMLElement) {
+                el.style.display = 'none';
+                el.style.visibility = 'hidden';
+                el.style.opacity = '0';
+                el.style.pointerEvents = 'none';
+                el.style.position = 'absolute';
+                el.style.left = '-9999px';
+                el.style.top = '-9999px';
+              }
               // Also try to remove it
               try { el.remove(); } catch(e) {}
             }
@@ -142,7 +145,7 @@ export default function AnimationPage() {
       <div className="absolute top-0 left-0 right-0 z-20 border-b border-white/20">
         <div className="container mx-auto px-4 lg:px-8 py-3 lg:py-4 flex items-center justify-between">
           <div className="flex items-center gap-2 lg:gap-4">
-            <img src="/logo.png" alt="Oracle" className="h-6 lg:h-8 w-auto opacity-80" />
+            <Image src="/logo.png" alt="Oracle" width={24} height={24} className="h-6 lg:h-8 w-auto opacity-80" />
             <div className="h-3 lg:h-4 w-px bg-white/40"></div>
             <div className="font-mono text-white text-xl lg:text-2xl font-bold tracking-widest italic transform -skew-x-12">
               ORACLE
@@ -196,7 +199,7 @@ export default function AnimationPage() {
             {/* Description with subtle grid pattern */}
             <div className="relative">
               <p className="text-sm lg:text-base text-white mb-5 lg:mb-6 leading-relaxed font-mono lg:opacity-80 italic lg:text-gray-300" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.5)' }}>
-                "The threads of tomorrow are woven in your hands. Fate rewards those who dare to see what others cannot."
+                &ldquo;The threads of tomorrow are woven in your hands. Fate rewards those who dare to see what others cannot.&rdquo;
               </p>
               
               {/* Technical corner accent - desktop only */}

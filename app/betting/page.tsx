@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import axios from 'axios';
@@ -149,7 +150,7 @@ export default function BettingPage() {
       <header className="border-b border-white/20 bg-black/40 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.png" alt="Oracle" className="h-6 w-auto opacity-80" />
+            <Image src="/logo.png" alt="Oracle" width={24} height={24} className="h-6 w-auto opacity-80" />
             <span className="font-mono text-2xl font-bold tracking-widest italic transform -skew-x-12 text-white">
               ORACLE
             </span>

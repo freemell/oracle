@@ -202,6 +202,21 @@ export default function AnimationPage() {
                 &ldquo;The threads of tomorrow are woven in your hands. Fate rewards those who dare to see what others cannot.&rdquo;
               </p>
               
+              {/* Contact Address */}
+              <div className="mb-6 lg:mb-8">
+                <div className="bg-black/30 border border-white/20 rounded-lg p-4 lg:p-6 backdrop-blur-sm">
+                  <div className="text-xs lg:text-sm text-gray-300 mb-2 font-mono tracking-wider uppercase">
+                    Contact Address
+                  </div>
+                  <div className="text-sm lg:text-base text-white font-mono break-all leading-relaxed" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
+                    HBwZEXKnjJvf8JKismSPnFTEySkuyFEkDtD9CcCKpump
+                  </div>
+                  <div className="mt-2 text-xs text-gray-400 font-mono italic">
+                    The Oracle awaits your connection
+                  </div>
+                </div>
+              </div>
+              
               {/* Technical corner accent - desktop only */}
               <div className="hidden lg:block absolute -left-4 top-1/2 w-3 h-3 border border-white opacity-30" style={{ transform: 'translateY(-50%)' }}>
                 <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-white" style={{ transform: 'translate(-50%, -50%)' }}></div>

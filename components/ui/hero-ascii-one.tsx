@@ -130,8 +130,13 @@ export default function AnimationPage() {
         />
       </div>
 
-      {/* Mobile stars background - Enhanced */}
-      <div className="absolute inset-0 w-full h-full lg:hidden stars-bg" style={{ zIndex: 0 }}></div>
+      {/* Mobile Animation - Same animation on mobile */}
+      <div className="absolute inset-0 w-full h-full lg:hidden">
+        <div 
+          data-us-project="OMzqyUv6M3kSnv0JeAtC" 
+          style={{ width: '100%', height: '100%', minHeight: '100vh' }}
+        />
+      </div>
 
       {/* Top Header */}
       <div className="absolute top-0 left-0 right-0 z-20 border-b border-white/20">

@@ -201,7 +201,7 @@ export default function AnimationPage() {
             {/* Buttons with technical accents */}
             <div className="flex flex-col lg:flex-row gap-3 lg:gap-4">
               <a 
-                href="https://x.com/Oracleonsol_" 
+                href="https://x.com/oracle_onchain" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="relative px-5 lg:px-6 py-2 lg:py-2.5 bg-transparent text-white font-mono text-xs lg:text-sm border border-white hover:bg-white hover:text-black transition-all duration-200 group text-center"

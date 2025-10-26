@@ -168,7 +168,9 @@ export default function AnimationPage() {
       {/* CTA Content */}
       <div className="relative z-10 flex min-h-screen items-center justify-end pt-16 lg:pt-0" style={{ marginTop: '5vh' }}>
         <div className="w-full lg:w-1/2 px-6 lg:px-16 lg:pr-[10%]">
-          <div className="max-w-lg relative lg:ml-auto">
+          {/* Mobile text background overlay for readability */}
+          <div className="lg:hidden absolute inset-0 bg-black/50 -mx-6 rounded-lg"></div>
+          <div className="max-w-lg relative lg:ml-auto z-10">
             {/* Top decorative line */}
             <div className="flex items-center gap-2 mb-3 opacity-60">
               <div className="w-8 h-px bg-white"></div>
@@ -179,7 +181,7 @@ export default function AnimationPage() {
             {/* Title with dithered accent */}
             <div className="relative">
               <div className="hidden lg:block absolute -right-3 top-0 bottom-0 w-1 dither-pattern opacity-40"></div>
-              <h1 className="text-2xl lg:text-5xl font-bold text-white mb-3 lg:mb-4 leading-tight font-mono tracking-wider whitespace-nowrap lg:-ml-[5%]" style={{ letterSpacing: '0.1em' }}>
+              <h1 className="text-2xl lg:text-5xl font-bold text-white mb-3 lg:mb-4 leading-tight font-mono tracking-wider whitespace-nowrap lg:-ml-[5%]" style={{ letterSpacing: '0.1em', textShadow: '0 2px 10px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.6)' }}>
                 BEND THE ODDS
               </h1>
             </div>
@@ -193,7 +195,7 @@ export default function AnimationPage() {
 
             {/* Description with subtle grid pattern */}
             <div className="relative">
-              <p className="text-xs lg:text-base text-gray-300 mb-5 lg:mb-6 leading-relaxed font-mono opacity-80 italic">
+              <p className="text-sm lg:text-base text-white mb-5 lg:mb-6 leading-relaxed font-mono lg:opacity-80 italic lg:text-gray-300" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.5)' }}>
                 "The threads of tomorrow are woven in your hands. Fate rewards those who dare to see what others cannot."
               </p>
               
